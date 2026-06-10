@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+    <script>
+        function validateForm() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            if (username === "") {
+                alert("Username is mandatory");
+                return false;
+            }
+            if (username.length > 50) {
+                alert("Username cannot exceed 50 characters");
+                return false;
+            }
+            if (password === "") {
+                alert("Password is mandatory");
+                return false;
+            }
+            if (password.length > 50) {
+                alert("Password cannot exceed 50 characters");
+                return false;
+            }
+            alert("Form submitted successfully");
+            return true;
+        }
+    </script>
+</head>
+<body>
+<form onsubmit="return validateForm()">
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                <input type="text" id="username" maxlength="50">
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" id="password" maxlength="50">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="checkbox" id="remember">
+                <label for="remember">Remember Credentials</label>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <a href="passwordrecovery.aspx">Forgot Password?</a>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Login">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
